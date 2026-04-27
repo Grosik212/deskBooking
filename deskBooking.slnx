@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="deskBooking.Api/deskBooking.Api.csproj" />
+  <Project Path="deskBooking.Application/deskBooking.Application.csproj" />
+  <Project Path="deskBooking.Domain/deskBooking.Domain.csproj" />
+  <Project Path="deskBooking.Infrastructure/deskBooking.Infrastructure.csproj" />
+</Solution>
