@@ -1,5 +1,6 @@
 using deskBooking.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using deskBooking.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,10 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<deskBooking.Domain.Interfaces.IDeskRepository, deskBooking.Infrastructure.Repositories.DeskRepository>();
+
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
