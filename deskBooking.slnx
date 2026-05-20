@@ -3,4 +3,5 @@
   <Project Path="deskBooking.Application/deskBooking.Application.csproj" />
   <Project Path="deskBooking.Domain/deskBooking.Domain.csproj" />
   <Project Path="deskBooking.Infrastructure/deskBooking.Infrastructure.csproj" />
+  <Project Path="deskBooking.Tests/deskBooking.Tests.csproj" />
 </Solution>

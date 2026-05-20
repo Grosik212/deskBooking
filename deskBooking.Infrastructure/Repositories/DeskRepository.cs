@@ -1,4 +1,4 @@
-﻿using deskBooking.Domain.Entities;
+using deskBooking.Domain.Entities;
 using deskBooking.Domain.Interfaces;
 using deskBooking.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -16,12 +16,16 @@ public class DeskRepository : IDeskRepository
 
     public async Task<IEnumerable<Desk>> GetAllAsync()
     {
-        return await _context.Desks.ToListAsync();
+        return await _context.Desks
+            .Include(d => d.Bookings)
+            .ToListAsync();
     }
 
     public async Task<Desk?> GetByIdAsync(Guid id)
     {
-        return await _context.Desks.FindAsync(id);
+        return await _context.Desks
+            .Include(d => d.Bookings)
+            .FirstOrDefaultAsync(d => d.Id == id);
     }
 
     public async Task AddAsync(Desk desk)
@@ -29,8 +33,14 @@ public class DeskRepository : IDeskRepository
         await _context.Desks.AddAsync(desk);
     }
 
+    public Task DeleteAsync(Desk desk)
+    {
+        _context.Desks.Remove(desk);
+        return Task.CompletedTask;
+    }
+
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
     }
-}
+}

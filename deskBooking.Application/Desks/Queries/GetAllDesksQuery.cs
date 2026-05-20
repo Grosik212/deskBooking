@@ -1,0 +1,6 @@
+using deskBooking.Application.Desks.Dtos;
+using MediatR;
+
+namespace deskBooking.Application.Desks.Queries;
+
+public record GetAllDesksQuery() : IRequest<IEnumerable<DeskDto>>;
