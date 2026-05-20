@@ -1,9 +1,6 @@
 # deskBooking 🪑
 
 Kompletna aplikacja do zarządzania biurkami (hot-desking) w architekturze **Clean Architecture** i wzorcem **CQRS**, wraz z nowoczesnym frontendem.
-
-*Projekt zbudowany we współpracy z agentem AI w ramach pair-programmingu. Głównym celem była decyzyjność architektoniczna, budowa pełnego stacku od zera oraz skuteczna implementacja wzorców projektowych i integracja obu warstw aplikacji.*
-
 ---
 
 ## 🛠️ Technologie
